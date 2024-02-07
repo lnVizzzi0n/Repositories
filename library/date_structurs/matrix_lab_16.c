@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 //Задача 1: меняет местами строки в которых находятся максимальный и минимальный элементы.
-void firstTask(matrix *m) {
+void firstTask(matrix *m)  {
     int maxRowIndex = 0;
     int minRowIndex = 0;
     int maxVal = m->values[0][0];
@@ -21,6 +21,8 @@ void firstTask(matrix *m) {
             }
         }
     }
+
+    swapRows(m, maxRowIndex, minRowIndex);
 }
 
 //Задача 2: упорядочивает строки матрицы по неубыванию наибольших
@@ -56,7 +58,7 @@ int main(){
                                               0, 1},
                                      2, 2);
     matrix b = createMatrixFromArray((int[]) {1, 0,
-                                              0, 1},
+                                              1, 1},
                                      2, 2);
     if (sixthTask(a, b)){
         printf("true");
